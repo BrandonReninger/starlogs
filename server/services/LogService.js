@@ -12,7 +12,7 @@ class LogService {
     }
 
     async getById(params, id) {
-        let log = await dbContext.Logs.find(id)
+        let log = await dbContext.Logs.findById(id).populate('ship', "name captain")
         if (!log) {
             throw new BadRequest("Invalid log id")
         }

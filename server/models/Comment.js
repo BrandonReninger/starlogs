@@ -7,9 +7,9 @@ const Comment = new Schema({
         type: String,
         required: true
     },
-    ship: {
+    log: {
         type: ObjectId,
-        ref: "Ship",
+        ref: "Log",
         required: true
     }
 }, {

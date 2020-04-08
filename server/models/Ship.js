@@ -2,11 +2,19 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const Ship = new Schema({
-  title: {
+  name: {
     type: String,
     required: true
   },
-  description: {
+  class: {
+    type: String,
+      required: true
+  },
+  yearBuilt: {
+    type: Number,
+    required: true
+  },
+  captain: {
     type: String,
     required: true
   }

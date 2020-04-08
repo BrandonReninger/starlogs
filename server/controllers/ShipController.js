@@ -11,16 +11,18 @@ export class ShipController extends BaseController {
       .get("", this.getAll)
       .post("", this.create);
   }
-  async getAll(_, res, next) {
+  async getAll(req, res, next) {
     try {
-      return res.send(["value1", "value2"]);
+      let ships = await shipService.getAll()
+      res.send(ships)
     } catch (error) {
       next(error);
     }
   }
   async create(req, res, next) {
     try {
-      res.send(req.body);
+      let ship = await shipService.create(req.body);
+      res.send(ship);
     } catch (error) {
       next(error);
     }

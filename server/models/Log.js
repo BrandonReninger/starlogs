@@ -11,6 +11,11 @@ const Log = new Schema({
         type: ObjectId,
         ref: "Ship",
         required: true
+    },
+    comment: {
+        type: ObjectId,
+        ref: "Comment",
+        required: true
     }
 }, {
     timestamps: true,
